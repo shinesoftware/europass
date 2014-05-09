@@ -1,0 +1,28 @@
+{
+    "name": "shinesoftware/europass",
+    "description": "Provide a direct connection to the Europass RESTful service for ZF2",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "http://www.eurocv.eu",
+    "authors": [
+        {
+            "name": "Michelangelo Turillo",
+            "email": "mturillo@shinesoftware.com",
+            "homepage": "http://www.eurocv.eu"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Europass": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
