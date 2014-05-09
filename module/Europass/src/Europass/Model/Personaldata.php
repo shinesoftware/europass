@@ -63,7 +63,4 @@ class Personaldata implements PersonaldataInterface
 	public function setGender($gender) {
 		$this->gender = $gender;
 	}
-
-	
-
 }

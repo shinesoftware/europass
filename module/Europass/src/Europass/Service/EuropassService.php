@@ -7,6 +7,7 @@ use Europass\Model\Data;
 class EuropassService implements EuropassServiceInterface
 {
 	protected $data;
+	protected $header;
 	protected $locale;
 	protected $acceptedLocale;
 	protected $personaldata;
@@ -107,6 +108,13 @@ class EuropassService implements EuropassServiceInterface
             $this->setHeader($format);
         }
 	}
+	
+	/*
+	 * Return the header of the page 
+	 */
+	public function getHeader(){
+		return $this->header;
+	}
 
 	/**
 	 * Set the header of the response
@@ -116,17 +124,17 @@ class EuropassService implements EuropassServiceInterface
 	{
 	
 		if ($format == "pdf") {
-			header('Content-Type: application/pdf;');
+			$this->header = 'Content-Type: application/pdf;';
 		} elseif ($format == "doc") {
-			header('Content-Type: application/vnd.ms-word;');
-			header('Content-Disposition: attachment; filename="cv.docx"');
+			$this->header = 'Content-Type: application/vnd.ms-word;';
+			$this->header = 'Content-Disposition: attachment; filename="cv.docx"';
 		} elseif ($format == "odt") {
-			header('Content-Type: application/vnd.oasis.opendocument.text;');
-			header('Content-Disposition: attachment; filename="cv.odt"');
+			$this->header = 'Content-Type: application/vnd.oasis.opendocument.text;';
+			$this->header = 'Content-Disposition: attachment; filename="cv.odt"';
 		} elseif ($format == "json") {
-			header('Content-Type: text/plain;');
+			$this->header = 'Content-Type: text/plain;';
 		} elseif ($format == "xml") {
-			header('Content-Type: text/xml;');
+			$this->header = 'Content-Type: text/xml;';
 		}
 	}
 	

@@ -39,8 +39,11 @@ class IndexController extends AbstractActionController
 		$pd->setBirthdate(date('1977-m-d'));
 
 		$this->europassService->setPersonaldata($pd);
-		$this->europassService->build();
 		
+		// get th header of the page
+		$header = $this->europassService->getHeader();
+		header($header);
+		$this->europassService->build();
 		die();
 	}
 }
