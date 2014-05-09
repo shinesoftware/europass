@@ -1,9 +1,9 @@
 <?php
 
 return array (
-		'controllers' => array (
+		'service_manager' => array (
 				'factories' => array (
-						'Europass\Controller\Europass' => 'Europass\Factory\EuropassControllerFactory',
+						'Europass\Service\EuropassService' => 'Europass\Model\Personaldata',
 				)
 		),
 );

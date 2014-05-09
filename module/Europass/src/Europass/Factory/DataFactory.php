@@ -17,7 +17,7 @@ class DataFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $realServiceLocator = $serviceLocator->getServiceLocator();
-        $data = $realServiceLocator->get('Europass\Model\DataFactory');
+        $data = $realServiceLocator->get('Europass\Model\Data');
 
         return new EuropassService($data);
     }

@@ -2,6 +2,8 @@
 namespace Europass\Service;
 
 
+use Europass\Model\Data;
+
 class EuropassService implements EuropassServiceInterface
 {
 	protected $data;
@@ -17,7 +19,7 @@ class EuropassService implements EuropassServiceInterface
 	/**
 	 * Class constructor
 	 */
-	public function __construct()
+	public function __construct(\Europass\Model\Personaldata $pd)
 	{
 		$this->acceptedLocale = array('bg', 'es', 'cs', 'da', 'de', 'et'. 'el', 'en', 'fr', 'hr', 'is', 'it', 'lv', 'lt', 'hu', 'mt', 'nl', 'no', 'pl', 'pt', 'ro', 'sk', 'sl', 'fi', 'sv', 'tr');
 		$this->setFormat('pdf');
