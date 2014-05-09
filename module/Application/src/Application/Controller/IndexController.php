@@ -32,7 +32,7 @@ class IndexController extends AbstractActionController
 		$this->europassService->setLocale('fr');
 		$this->europassService->setFormat('json');
 		
-		$pd = $this->europassService->newPersonaldata();
+		$pd = $this->europassService->getPersonaldata();
 		$pd->setFirstname('John');
 		$pd->setLastname('Doe');
 		$pd->setGender('M');

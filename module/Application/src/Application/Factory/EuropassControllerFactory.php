@@ -17,7 +17,7 @@ class EuropassControllerFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $realServiceLocator = $serviceLocator->getServiceLocator();
-        $europassService = $realServiceLocator->get('Europass\Service\EuropassServiceInterface');
+        $europassService = $realServiceLocator->get('Europass\Service\EuropassService');
 
         return new IndexController($europassService);
     }

@@ -16,6 +16,9 @@ class EuropassFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new EuropassService($serviceLocator->get('Europass\Model\Personaldata'));
+    	$data = $serviceLocator->get('Europass\Model\Data');
+    	$personaldata = $serviceLocator->get('Europass\Model\Personaldata');
+    	
+        return new EuropassService($data, $personaldata);
     }
 }

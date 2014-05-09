@@ -19,23 +19,18 @@ class EuropassService implements EuropassServiceInterface
 	/**
 	 * Class constructor
 	 */
-	public function __construct(\Europass\Model\Personaldata $pd)
+	public function __construct(\Europass\Model\Data $data, \Europass\Model\Personaldata $pd)
 	{
 		$this->acceptedLocale = array('bg', 'es', 'cs', 'da', 'de', 'et'. 'el', 'en', 'fr', 'hr', 'is', 'it', 'lv', 'lt', 'hu', 'mt', 'nl', 'no', 'pl', 'pt', 'ro', 'sk', 'sl', 'fi', 'sv', 'tr');
 		$this->setFormat('pdf');
 		$this->setCommand('document/to/pdf-cv');
 		$this->newDataModel();
+		$this->data = $data;
+		$this->personaldata = $pd;
 	}
 	
 	public function newDataModel(){
 		$this->data = new \Europass\Model\Data('<?xml version=\'1.0\' encoding=\'utf-8\'?><SkillsPassport xmlns="http://europass.cedefop.europa.eu/Europass" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://europass.cedefop.europa.eu/xml/v3.1.0/EuropassSchema.xsd" />');
-	}
-	
-	/**
-	 * @return the $personaldata
-	 */
-	public function newPersonaldata() {
-		return new \Europass\Model\Personaldata();
 	}
 	
 	/**
