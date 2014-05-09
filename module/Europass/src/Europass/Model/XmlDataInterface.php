@@ -1,7 +1,7 @@
 <?php
 namespace Europass\Model;
 
-interface DataInterface
+interface XmlDataInterface
 {
     public function getXml();
     public function setXml($xml);

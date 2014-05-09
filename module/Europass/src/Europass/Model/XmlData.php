@@ -1,7 +1,7 @@
 <?php
 namespace Europass\Model;
 
-class Data extends \SimpleXMLElement implements DataInterface
+class XmlData extends \SimpleXMLElement implements XmlDataInterface
 {
     protected $xml;
     
